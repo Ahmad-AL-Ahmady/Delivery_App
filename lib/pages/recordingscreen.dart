@@ -10,10 +10,8 @@ import 'package:flutter_sound/flutter_sound.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:record/record.dart';
-import 'package:record_mp3/record_mp3.dart';
 import 'package:recordtest/pages/Homescreen.dart';
 import 'package:http/http.dart' as http;
-import 'package:record/record.dart';
 
 class Recordingscreen extends StatefulWidget {
   const Recordingscreen({Key? key}) : super(key: key);
