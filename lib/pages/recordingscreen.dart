@@ -105,7 +105,7 @@ class _RecordingscreenState extends State<Recordingscreen> {
       if (response.statusCode == 200) {
         return '$orderId $chatbotResponse';
       } else {
-        return '. $chatbotResponse';
+        return '. $chatbotResponse'; // the dot means that the orderId is null
       }
     } catch (e) {
       print("EXCEPTION");
@@ -225,13 +225,13 @@ class _RecordingscreenState extends State<Recordingscreen> {
 
       print("Delivery ID: $deliveryId");
 
-      if (deliveryId != ".") {
+      if (deliveryId != "." && deliveryId != null) {
         // get the response of the resident
         ShowMessage(gContext!);
         await getResidentResponse(deliveryId);
       }
 
-      deliveryId = null;
+      deliveryId = ".";
     }
 
     setState(() {
