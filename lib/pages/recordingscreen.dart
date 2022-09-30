@@ -69,6 +69,26 @@ class _RecordingscreenState extends State<Recordingscreen> {
     super.dispose();
   }
 
+  Future<String> EndSession() async {
+    var response = await http.post(
+      Uri.https('iic-project.herokuapp.com', '/api/v1/endSession'),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: jsonEncode(
+        {
+          "delivery": true,
+        },
+      ),
+    );
+
+    if (response.statusCode == 200) {
+      return response.body;
+    } else {
+      return 'failure';
+    }
+  }
+
   Future<String> sendAudio(String audio) async {
     for (int i = 0; i < audio.length; i += 1000) {
       if (i + 1000 > audio.length) {
@@ -272,7 +292,7 @@ class _RecordingscreenState extends State<Recordingscreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
-          "Recording Screen",
+          "",
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         backgroundColor: Color.fromARGB(255, 0, 144, 201),
@@ -280,10 +300,19 @@ class _RecordingscreenState extends State<Recordingscreen> {
         leadingWidth: 100,
         elevation: 0,
         leading: ElevatedButton.icon(
-          onPressed: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => Homescreen())),
+          onPressed: () async {
+            var statues = await EndSession();
+            if (statues == 'failure') {
+              print('failed');
+            } else {
+              print(statues);
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Homescreen()));
+            }
+            ;
+          },
           icon: const Icon(Icons.arrow_left_sharp),
-          label: const Text('Back'),
+          label: const Text('الرجوع'),
           style: ElevatedButton.styleFrom(
               elevation: 0, primary: Colors.transparent),
         ),
@@ -318,7 +347,7 @@ class _RecordingscreenState extends State<Recordingscreen> {
                         ),
                         Center(
                           child: Text(
-                            "Record The Delivery",
+                            "سجل طلب  التوصيل",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.white,
