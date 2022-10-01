@@ -100,11 +100,7 @@ class _RecordingscreenState extends State<Recordingscreen> {
 
     try {
       var response = await http.post(
-<<<<<<< HEAD
-          Uri.https('iic-project.herokuapp.com', '/api/v1/sendAudio'),
-=======
           Uri.https('iic-v2.herokuapp.com', '/api/v1/sendAudio'),
->>>>>>> 0b75a199eb05d61d222a99844993d18f00174964
           headers: {
             'Content-Type': 'application/json',
           },
