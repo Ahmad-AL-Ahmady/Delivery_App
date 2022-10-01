@@ -41,6 +41,7 @@ dependencies:
   path_provider: ^2.0.11
   record_mp3: ^3.0.0
   http: ^0.13.5
+  flutter_launcher_icons: ^0.10.0
 
 dev_dependencies:
   flutter_test:
@@ -62,7 +63,7 @@ flutter_icons:
   image_path: "assets/New logo2.png"
   adabtive_icon_foreground: "assets/New logo2.png"
   adabtive_icon_background: "#ffffff"
-  
+
 # The following section is specific to Flutter packages.
 flutter:
   # The following line ensures that the Material Icons font is
