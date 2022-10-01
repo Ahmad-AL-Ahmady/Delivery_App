@@ -100,7 +100,7 @@ class _RecordingscreenState extends State<Recordingscreen> {
 
     try {
       var response = await http.post(
-          Uri.https('iic-delivery.mybluemix.net', '/api/v1/sendAudio'),
+          Uri.https('iic-project.herokuapp.com', '/api/v1/sendAudio'),
           headers: {
             'Content-Type': 'application/json',
           },
@@ -189,7 +189,7 @@ class _RecordingscreenState extends State<Recordingscreen> {
         await Future.delayed(const Duration(seconds: 5));
 
         var response = await http.post(
-            Uri.https('iic-delivery.mybluemix.net', '/api/v1/checkDelivery'),
+            Uri.https('iic-project.herokuapp.com', '/api/v1/checkDelivery'),
             headers: {
               'Content-Type': 'application/json',
             },

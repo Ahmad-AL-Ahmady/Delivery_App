@@ -41,6 +41,12 @@ dependencies:
   path_provider: ^2.0.11
   record_mp3: ^3.0.0
   http: ^0.13.5
+  flutter_launcher_icons: ^0.10.0
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/New logo2.png"
 
 dev_dependencies:
   flutter_test:
