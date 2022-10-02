@@ -43,6 +43,11 @@ dependencies:
   http: ^0.13.5
   flutter_launcher_icons: ^0.10.0
 
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/New logo2.png"
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -56,13 +61,6 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
-flutter_icons:
-  android: true
-  ios: true
-  image_path: "assets/New logo2.png"
-  adabtive_icon_foreground: "assets/New logo2.png"
-  adabtive_icon_background: "#ffffff"
 
 # The following section is specific to Flutter packages.
 flutter:
