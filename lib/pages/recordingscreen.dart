@@ -71,7 +71,7 @@ class _RecordingscreenState extends State<Recordingscreen> {
 
   Future<String> EndSession() async {
     var response = await http.post(
-      Uri.https('iic-v2.herokuapp.com', '/api/v1/endSession'),
+      Uri.https('iic-v3.herokuapp.com', '/api/v1/endSession'),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -100,7 +100,7 @@ class _RecordingscreenState extends State<Recordingscreen> {
 
     try {
       var response = await http.post(
-          Uri.https('iic-v2.herokuapp.com', '/api/v1/sendAudio'),
+          Uri.https('iic-v3.herokuapp.com', '/api/v1/sendAudio'),
           headers: {
             'Content-Type': 'application/json',
           },
@@ -189,7 +189,7 @@ class _RecordingscreenState extends State<Recordingscreen> {
         await Future.delayed(const Duration(seconds: 5));
 
         var response = await http.post(
-            Uri.https('iic-v2.herokuapp.com', '/api/v1/checkDelivery'),
+            Uri.https('iic-v3.herokuapp.com', '/api/v1/checkDelivery'),
             headers: {
               'Content-Type': 'application/json',
             },
